@@ -39,6 +39,10 @@ jobs:
         ./autogen.sh
         ./configure LIBS="-liconv"
         make
+    - name: Strip
+      run: strip -u -r oggenc/oggenc
+    - name: Sign
+      run: codesign --sign - --timestamp --force oggenc/oggenc
 
   build-x64:
     runs-on: macos-13
@@ -70,3 +74,7 @@ jobs:
         ./autogen.sh
         ./configure LIBS="-liconv"
         make
+    - name: Strip
+      run: strip -u -r oggenc/oggenc
+    - name: Sign
+      run: codesign --sign - --timestamp --force oggenc/oggenc
