@@ -16,6 +16,8 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: true
+    - name: Brew
+      run: brew install autoconf
     - name: Autogen
       working-directory: ogg
       run: ./autogen.sh
