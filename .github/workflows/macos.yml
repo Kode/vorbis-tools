@@ -37,4 +37,5 @@ jobs:
     - name: Build tools
       run: |
         ./autogen.sh
+        ./configure
         make
