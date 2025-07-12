@@ -22,5 +22,5 @@ jobs:
         mkdir build
         cd build
         cmake -G Xcode ..
-        cmake --build .
-        cmake --install .
+        cmake -DCMAKE_BUILD_TYPE=Release --build .
+        sudo cmake --install .
