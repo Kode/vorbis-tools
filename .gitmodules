@@ -1,0 +1,8 @@
+[submodule "ogg"]
+	path = ogg
+	url = https://github.com/Kode/ogg.git
+	branch = main
+[submodule "vorbis"]
+	path = vorbis
+	url = https://github.com/Kode/vorbis.git
+	branch = main
