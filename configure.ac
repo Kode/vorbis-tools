@@ -18,6 +18,8 @@ AM_MAINTAINER_MODE([enable])
 
 AC_USE_SYSTEM_EXTENSIONS
 
+AC_PROG_RANLIB
+
 dnl enable silent rules on automake 1.11 and later
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
