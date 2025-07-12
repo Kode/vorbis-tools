@@ -1,0 +1,28 @@
+name: macOS
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  build-arm64:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Autogen
+      working-directory: ogg
+      run: ./autogen.sh
+    - name: Configure
+      working-directory: ogg
+      run: ./configure
+    - name: Make
+      working-directory: ogg
+      run: make
+    - name: Install
+      working-directory: ogg
+      run: sudo make install
