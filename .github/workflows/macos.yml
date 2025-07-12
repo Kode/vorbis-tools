@@ -16,17 +16,10 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: true
-    - name: Brew
-      run: brew install autoconf automake
-    - name: Autogen
+    - name: Build
       working-directory: ogg
-      run: ./autogen.sh
-    - name: Configure
-      working-directory: ogg
-      run: ./configure
-    - name: Make
-      working-directory: ogg
-      run: make
-    - name: Install
-      working-directory: ogg
-      run: sudo make install
+      run: |
+        mkdir build
+        cd build
+        cmake -G Xcode ..
+        cmake --build .
