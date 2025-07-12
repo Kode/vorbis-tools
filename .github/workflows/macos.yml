@@ -17,7 +17,7 @@ jobs:
       with:
         submodules: true
     - name: Brew
-      run: brew install autoconf automake libiconv
+      run: brew install autoconf automake
     - name: Build ogg
       working-directory: ogg
       run: |
@@ -37,5 +37,5 @@ jobs:
     - name: Build tools
       run: |
         ./autogen.sh
-        ./configure
+        ./configure LIBS="-liconv"
         make
